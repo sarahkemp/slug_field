@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="slug_field" status="test" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+<extension id="Slug-Field" status="test" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Slug Field</name>
 	<description>Auto, editable slug field</description>
 	<repo type="github">https://github.com/sarahkemp/Slug-Field</repo>
