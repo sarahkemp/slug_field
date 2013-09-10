@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="Slug-Field" status="test" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Slug Field</name>
-	<description>Auto, editable slug field</description>
+	<description>Auto, editable slug field based on another field (your pick, but I'd stick with a text input) which switches to readonly once set.</description>
 	<repo type="github">https://github.com/sarahkemp/Slug-Field</repo>
 	<url type="discuss">http://getsymphony.com/discuss/thread/????/</url>
 	<url type="issues">https://github.com/sarahkemp/Slug-Field/issues</url>
