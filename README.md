@@ -1,6 +1,6 @@
 # Slug Field (for semi-custom URLs)
 
-Version 1.0
+Version 1.1
 
 ### Slug-ifies the content of another field and then **stays the same** - editable until saved and then readonly
 

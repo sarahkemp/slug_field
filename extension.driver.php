@@ -52,13 +52,16 @@
 		 * Creates the table needed for the settings of the field
 		 */
 		public function update($previousVersion) {
-			$ret = true;
 
-			// are we updating from lower than 2.0 ?
-			//if ($ret && version_compare($previousVersion,'2.0') == -1) {
-			//	$ret = FieldImage_Preview_Settings::createFieldTable();
-			//}
-			return $ret;
+                        if( version_compare($previousVersion, '1.1', '<') ){
+				$fields = Symphony::Database()->fetch("SELECT `field_id` FROM `tbl_fields_slug_field`");
+				foreach( $fields as $field ){
+					$entries_table = 'tbl_entries_data_'.$field["field_id"];
+					Symphony::Database()->query("ALTER TABLE `{$entries_table}` MODIFY `value` VARCHAR(255) default NULL");
+				}
+			}
+
+			return true;
 		}
 		
 		/**

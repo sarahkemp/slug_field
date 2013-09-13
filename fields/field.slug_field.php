@@ -231,7 +231,7 @@ class FieldSlug_Field extends Field {
      * @param string $fieldnamePostfix
      */
     public function displayPublishPanel(&$wrapper, $data = NULL, $flagWithError = NULL, $fieldnamePrefix = NULL, $fieldnamePostfix = NULL) {
-        $value = General::sanitize(isset($data['value']) ? $data['value'] : null);
+        $value = General::sanitize(isset($data['value']) ? $data['value'] : NULL);
         $label = Widget::Label($this->get('label'));
         if ($this->get('required') != 'yes')
             $label->appendChild(new XMLElement('i', __('Optional')));
@@ -239,11 +239,11 @@ class FieldSlug_Field extends Field {
         $field->setAttribute('data-field-to-mimic', $this->get('field_to_mimic'));
         $field->setAttribute('data-slug-field', $this->get('element_name'));
 
-        if ($data && $flagWithError == NULL) {
+        if (!is_null($data['value']) && $flagWithError == NULL) {
             $field->setAttribute('style', 'display:none;');
             $field->setAttribute('readonly', 'readonly');
             $anchor = Widget::Anchor(
-                            $data['value'], is_null($data['value']) ? '#' : (string) '/'.$data['value']
+                            $data['value'], '/'.$data['value']
             );
             $label->appendChild($anchor);
         }
@@ -345,7 +345,7 @@ class FieldSlug_Field extends Field {
                         "CREATE TABLE IF NOT EXISTS `tbl_entries_data_" . $this->get('id') . "` (
 					`id` int(11) unsigned NOT NULL auto_increment,
 					`entry_id` int(11) unsigned NOT NULL,
-                                        `value` VARCHAR(255) NOT NULL,
+                                        `value` VARCHAR(255) NULL,
 					PRIMARY KEY  (`id`),
 					KEY `entry_id` (`entry_id`)
 				) TYPE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"

@@ -3,12 +3,10 @@
 	<name>Slug Field</name>
 	<description>Auto, editable slug field</description>
 	<repo type="github">https://github.com/sarahkemp/slug-field</repo>
-	<url type="discuss">http://getsymphony.com/discuss/thread/????/</url>
+	<url type="discuss">http://www.getsymphony.com/discuss/thread/103175/</url>
 	<url type="issues">https://github.com/sarahkemp/slug-field/issues</url>
 	<types>
-		<type>Interface</type>
 		<type>Field</type>
-		<type>Preview</type>
 	</types>
 	<authors>
 		<author>
@@ -17,7 +15,10 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.0" date="2013-09-10" min="??" max="??">
+                <release version="1.1" date="2013-09-13" min="2.3.3" max="2.3.3">
+			- Add default value to avoid NULL error
+		</release>
+		<release version="1.0" date="2013-09-10" min="2.3.3" max="2.3.3">
 			- Initial release
 		</release>
 	</releases>
