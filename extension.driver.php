@@ -32,7 +32,7 @@
 			
 			// Only add when editing a section
 			if ($this->startsWith($c, '/publish/')) {
-				Administration::instance()->Page->addScriptToHead('/extensions/slug_field/assets/slug_field.js',time()+1);
+				Administration::instance()->Page->addScriptToHead(URL . '/extensions/slug_field/assets/slug_field.js',time()+1);
 			}
 		}
 		
