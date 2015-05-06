@@ -11,18 +11,25 @@
                         val = val.trim().toLowerCase().replace(/[^\w ]+/g, '').replace(/ +/g, '-');
                     }
                     return val;
-                },
-                init = function() {
-                    var field_name = $('[data-slug-field]').attr('data-slug-field'),
-                        field_name_to_mimic = $('[data-field-to-mimic]').attr('data-field-to-mimic'),
-                        field_to_mimic = $('[name="fields[' + field_name_to_mimic + ']"]'),
-                        slug_field = $('[name="fields[' + field_name + ']"]');
-                
-                    field_to_mimic.on('keyup change', function(){
-                        if (!slug_field.attr('readonly')) {
+                };
+
+	    var bindEvent = function() {
+                  var field_name = $(this).attr('data-slug-field');
+                  var field_name_to_mimic = $(this).attr('data-field-to-mimic');
+                  var field_to_mimic = $('[name="fields[' + field_name_to_mimic + ']"]');
+                  var slug_field = $(this);
+
+                  field_to_mimic.on('keyup change', function(){
+                       if (!slug_field.attr('readonly')) {
                             slug_field.val(scrub(this.value));
-                        }
-                    });
+                       }
+                  });
+
+	    };
+
+
+            var init = function() {
+		   $('[data-slug-field]').each(bindEvent);
                 };
 
             $(init);
